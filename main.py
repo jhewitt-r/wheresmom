@@ -108,50 +108,50 @@ BLUEBLACK = (44, 51, 51)
 
 # fonts
 
-GAMETITLEFONT = pygame.freetype.Font('./gameattempt/fonts/CubicPixel.otf', 135)
+GAMETITLEFONT = pygame.freetype.Font('./fonts/CubicPixel.otf', 135)
 GTITLEDISP = MessageDisplay(GAMETITLEFONT, 135, BLUEBLACK, 0.4)
 
 SUBTITLEFONT = pygame.freetype.Font(
-    './gameattempt/fonts/EmotionEngine.ttf', 30)
+    './fonts/EmotionEngine.ttf', 30)
 SUBTITLEDISP = MessageDisplay(SUBTITLEFONT, 30, BLUEBLACK, 0.7)
 
 
-STARTFONT = pygame.freetype.Font('./gameattempt/fonts/PixelEmulator.ttf', 15)
+STARTFONT = pygame.freetype.Font('./fonts/PixelEmulator.ttf', 15)
 STARTDISP = MessageDisplay(STARTFONT, 15, BLUEBLACK, 0.9)
 
-buttonFont = pygame.font.Font('./gameattempt/fonts/PixelEmulator.ttf', 15)
+buttonFont = pygame.font.Font('./fonts/PixelEmulator.ttf', 15)
 
 tickCount = 0
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption(GAMETITLE)
-icon = pygame.image.load('./gameattempt/img/search.png')
+icon = pygame.image.load('./img/search.png')
 pygame.display.set_icon(icon)
 
-creatorIcon = pygame.image.load('./gameattempt/img/buildersiconography.png')
+creatorIcon = pygame.image.load('./img/buildersiconography.png')
 creatorIcon = pygame.transform.smoothscale(creatorIcon, (WIDTH, HEIGHT))
 
-magLgIcon = pygame.image.load('./gameattempt/img/search-lg.png')
+magLgIcon = pygame.image.load('./img/search-lg.png')
 magLgIcon = pygame.transform.smoothscale(magLgIcon, (100, 100))
 magRect = magLgIcon.get_rect()
 
 # user typing
-base_font = pygame.font.Font('./gameattempt/fonts/PixelEmulator.ttf', 32)
+base_font = pygame.font.Font('./fonts/PixelEmulator.ttf', 32)
 user_text = ''
 
 # story text
-speakerFont = pygame.freetype.Font('./gameattempt/fonts/PixelEmulator.ttf', 30)
-storyFont = pygame.freetype.Font('./gameattempt/fonts/PixelEmulator.ttf', 18)
-tipsFont = pygame.freetype.Font('./gameattempt/fonts/PixelEmulator.ttf', 13)
-textbox = pygame.image.load('./gameattempt/img/UIAssets/Textbox.png')
+speakerFont = pygame.freetype.Font('./fonts/PixelEmulator.ttf', 30)
+storyFont = pygame.freetype.Font('./fonts/PixelEmulator.ttf', 18)
+tipsFont = pygame.freetype.Font('./fonts/PixelEmulator.ttf', 13)
+textbox = pygame.image.load('./img/UIAssets/Textbox.png')
 
-tipsbox = pygame.image.load('./gameattempt/img/UIAssets/TipsBox.png')
+tipsbox = pygame.image.load('./img/UIAssets/TipsBox.png')
 
-itemBox = pygame.image.load('./gameattempt/img/UIAssets/ItemBoard.png')
+itemBox = pygame.image.load('./img/UIAssets/ItemBoard.png')
 
 # game assets
 attentionBubble = pygame.image.load(
-    './gameattempt/img/UIAssets/attentionBubble.png')
+    './img/UIAssets/attentionBubble.png')
 
 
 input_rect = pygame.Rect(0, 0, 400, 42)
@@ -192,65 +192,65 @@ class BoundarySprite(pygame.sprite.Sprite):
 # settings
 
 # bedroom
-bedroomBG = pygame.image.load('./gameattempt/img/bkg/Bedroom.png')
+bedroomBG = pygame.image.load('./img/bkg/Bedroom.png')
 bedroomMask = pygame.image.load(
-    './gameattempt/img/bkgBounds/Bedroommask.png')
+    './img/bkgBounds/BedroomMask.png')
 bedroomSprite = BoundarySprite(bedroomMask)
 bedroomNextImg = pygame.image.load(
-    './gameattempt/img/next/BedroomNext.png')
+    './img/next/BedroomNext.png')
 bedroomNext = BoundarySprite(bedroomNextImg, 510, 360)
 
 # hallway
-hallwayBG = pygame.image.load('./gameattempt/img/bkg/Hallway.png')
-hallwayMask = pygame.image.load('./gameattempt/img/bkgBounds/HallwayBound.png')
+hallwayBG = pygame.image.load('./img/bkg/Hallway.png')
+hallwayMask = pygame.image.load('./img/bkgBounds/HallwayBound.png')
 hallwaySprite = BoundarySprite(hallwayMask, WIDTH-120, HEIGHT/2+40)
 HallwayBedroomNextImg = pygame.image.load(
-    './gameattempt/img/next/HallwayToBedroom.png')
+    './img/next/HallwayToBedroom.png')
 hallwayBedroomNext = BoundarySprite(HallwayBedroomNextImg, 320, 540)
 HallwayKitchenNextImg = pygame.image.load(
-    './gameattempt/img/next/HallwaytoKitchen.png')
+    './img/next/HallwaytoKitchen.png')
 HallwayKitchenNext = BoundarySprite(HallwayKitchenNextImg, 215, 510)
 HallwayParentNextImg = pygame.image.load(
-    './gameattempt/img/next/HallwayToParent.png')
+    './img/next/HallwayToParent.png')
 HallwayParentNext = BoundarySprite(HallwayParentNextImg, 320, 540)
 
 # Kitchen
-kitchenBG = pygame.image.load('./gameattempt/img/bkg/Kitchen.png')
-kitchenMask = pygame.image.load('./gameattempt/img/bkgBounds/KitchenBound.png')
+kitchenBG = pygame.image.load('./img/bkg/Kitchen.png')
+kitchenMask = pygame.image.load('./img/bkgBounds/KitchenBound.png')
 kitchenSprite = BoundarySprite(kitchenMask, 2*WIDTH/3, HEIGHT/3+40)
 KitchenHallwayNextImg = pygame.image.load(
-    './gameattempt/img/next/KitchenToHallway.png')
+    './img/next/KitchenToHallway.png')
 KitchenDiningNextImg = pygame.image.load(
-    './gameattempt/img/next/KitchenToDining.png')
+    './img/next/KitchenToDining.png')
 KitchenHallwayNext = BoundarySprite(KitchenHallwayNextImg, 325, 360)
 KitchemDiningNext = BoundarySprite(KitchenDiningNextImg, 60, 460)
 
 # Parent Room
-parentBG = pygame.image.load('./gameattempt/img/bkg/ParentRoom.png')
+parentBG = pygame.image.load('./img/bkg/ParentRoom.png')
 parentMask = pygame.image.load(
-    './gameattempt/img/bkgBounds/ParentRoomBound.png')
+    './img/bkgBounds/ParentRoomBound.png')
 parentRmSprite = BoundarySprite(parentMask, WIDTH/2, HEIGHT-80)
 ParentRoomNextImg = pygame.image.load(
-    './gameattempt/img/next/ParentRoomNext.png')
+    './img/next/ParentRoomNext.png')
 ParentRoomNext = BoundarySprite(ParentRoomNextImg, 150, 360)
 
 # Dining Room
-diningBG = pygame.image.load('./gameattempt/img/bkg/DiningRoom.png')
+diningBG = pygame.image.load('./img/bkg/DiningRoom.png')
 diningMask = pygame.image.load(
-    './gameattempt/img/bkgBounds/DiningBound.png')
+    './img/bkgBounds/DiningBound.png')
 diningSprite = BoundarySprite(diningMask, WIDTH-50, 2*HEIGHT/3)
 diningKitchenNextImg = pygame.image.load(
-    './gameattempt/img/next/DiningToKitchen.png')
+    './img/next/DiningToKitchen.png')
 diningKitchenNext = BoundarySprite(diningKitchenNextImg, 550, 460)
 diningGardenNextImg = pygame.image.load(
-    './gameattempt/img/next/DiningToGarden.png')
+    './img/next/DiningToGarden.png')
 diningGardenNext = BoundarySprite(diningGardenNextImg, 320, 540)
 
 # Garden
-gardenBG = pygame.image.load('./gameattempt/img/bkg/Garden.png')
-gardenMask = pygame.image.load('./gameattempt/img/bkgBounds/GardenBound.png')
+gardenBG = pygame.image.load('./img/bkg/Garden.png')
+gardenMask = pygame.image.load('./img/bkgBounds/GardenBound.png')
 gardenSprite = BoundarySprite(gardenMask)
-gardenNextImg = pygame.image.load('./gameattempt/img/next/GardenNext.png')
+gardenNextImg = pygame.image.load('./img/next/GardenNext.png')
 gardenNext = BoundarySprite(gardenNextImg, 500, 230)
 
 
@@ -262,11 +262,11 @@ for i in roomslist:
 
 # object assets
 dirtMound = pygame.image.load(
-    './gameattempt/img/objectAssets/DirtMound.png')
+    './img/objectAssets/DirtMound.png')
 dirtMoundSprite = BoundarySprite(dirtMound)
 
 diningTable = pygame.image.load(
-    './gameattempt/img/objectAssets/DiningTable.png')
+    './img/objectAssets/DiningTable.png')
 diningTableSprite = BoundarySprite(diningTable)
 
 
@@ -283,7 +283,7 @@ class Object(pygame.sprite.Sprite):
 
 
 ring = pygame.image.load(
-    './gameattempt/img/objectAssets/Ring.png')
+    './img/objectAssets/Ring.png')
 ringSprite = BoundarySprite(ring)
 
 gardenObjects = pygame.sprite.Group()
@@ -292,19 +292,19 @@ gardenObjects.add(ringSprite)
 
 
 jojo = pygame.image.load(
-    './gameattempt/img/objectAssets/PhotoSmall.png')
+    './img/objectAssets/PhotoSmall.png')
 jojoSprite = BoundarySprite(jojo)
 
 marPic1 = pygame.image.load(
-    './gameattempt/img/objectAssets/marPic1.png')
+    './img/objectAssets/marPic1.png')
 marPic1Sprite = BoundarySprite(marPic1)
 
 marPic2 = pygame.image.load(
-    './gameattempt/img/objectAssets/marPic2.png')
+    './img/objectAssets/marPic2.png')
 marPic2Sprite = BoundarySprite(marPic2)
 
 boxSmall = pygame.image.load(
-    './gameattempt/img/objectAssets/boxSmall.png')
+    './img/objectAssets/boxSmall.png')
 boxSmallSprite = BoundarySprite(boxSmall)
 
 parentRoomObjects = pygame.sprite.Group()
@@ -312,24 +312,24 @@ parentRoomObjects.add(jojoSprite, marPic1Sprite, marPic2Sprite, boxSmallSprite)
 
 
 # sprite images
-walkRight = [pygame.image.load('./gameattempt/img/playersprite/1x/Right1.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right2.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right3.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right4.png'), pygame.image.load(
-    './gameattempt/img/playersprite/1x/Right5.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right6.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right7.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right8.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right9.png')]
-walkLeft = [pygame.image.load('./gameattempt/img/playersprite/1x/Left1.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left2.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left3.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left4.png'), pygame.image.load(
-    './gameattempt/img/playersprite/1x/Left5.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left6.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left7.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left8.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left9.png'), ]
-walkUp = [pygame.image.load('./gameattempt/img/playersprite/1x/Up1.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up2.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up3.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up4.png'), pygame.image.load(
-    './gameattempt/img/playersprite/1x/Up5.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up6.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up7.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up8.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up9.png'), ]
-walkDown = [pygame.image.load('./gameattempt/img/playersprite/1x/Down1.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down2.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down3.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down4.png'), pygame.image.load(
-    './gameattempt/img/playersprite/1x/Down5.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down6.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down7.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down8.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down9.png'), ]
+walkRight = [pygame.image.load('./img/playersprite/1x/Right1.png'), pygame.image.load('./img/playersprite/1x/Right2.png'), pygame.image.load('./img/playersprite/1x/Right3.png'), pygame.image.load('./img/playersprite/1x/Right4.png'), pygame.image.load(
+    './img/playersprite/1x/Right5.png'), pygame.image.load('./img/playersprite/1x/Right6.png'), pygame.image.load('./img/playersprite/1x/Right7.png'), pygame.image.load('./img/playersprite/1x/Right8.png'), pygame.image.load('./img/playersprite/1x/Right9.png')]
+walkLeft = [pygame.image.load('./img/playersprite/1x/Left1.png'), pygame.image.load('./img/playersprite/1x/Left2.png'), pygame.image.load('./img/playersprite/1x/Left3.png'), pygame.image.load('./img/playersprite/1x/Left4.png'), pygame.image.load(
+    './img/playersprite/1x/Left5.png'), pygame.image.load('./img/playersprite/1x/Left6.png'), pygame.image.load('./img/playersprite/1x/Left7.png'), pygame.image.load('./img/playersprite/1x/Left8.png'), pygame.image.load('./img/playersprite/1x/Left9.png'), ]
+walkUp = [pygame.image.load('./img/playersprite/1x/Up1.png'), pygame.image.load('./img/playersprite/1x/Up2.png'), pygame.image.load('./img/playersprite/1x/Up3.png'), pygame.image.load('./img/playersprite/1x/Up4.png'), pygame.image.load(
+    './img/playersprite/1x/Up5.png'), pygame.image.load('./img/playersprite/1x/Up6.png'), pygame.image.load('./img/playersprite/1x/Up7.png'), pygame.image.load('./img/playersprite/1x/Up8.png'), pygame.image.load('./img/playersprite/1x/Up9.png'), ]
+walkDown = [pygame.image.load('./img/playersprite/1x/Down1.png'), pygame.image.load('./img/playersprite/1x/Down2.png'), pygame.image.load('./img/playersprite/1x/Down3.png'), pygame.image.load('./img/playersprite/1x/Down4.png'), pygame.image.load(
+    './img/playersprite/1x/Down5.png'), pygame.image.load('./img/playersprite/1x/Down6.png'), pygame.image.load('./img/playersprite/1x/Down7.png'), pygame.image.load('./img/playersprite/1x/Down8.png'), pygame.image.load('./img/playersprite/1x/Down9.png'), ]
 
 
-dwalkRight = [pygame.image.load('./gameattempt/img/playersprite/1x/Right1.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right2.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right3.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right4.png'), pygame.image.load(
-    './gameattempt/img/playersprite/1x/Right5.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right6.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right7.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right8.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Right9.png')]
-dwalkLeft = [pygame.image.load('./gameattempt/img/playersprite/1x/Left1.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left2.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left3.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left4.png'), pygame.image.load(
-    './gameattempt/img/playersprite/1x/Left5.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left6.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left7.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left8.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Left9.png'), ]
-dwalkUp = [pygame.image.load('./gameattempt/img/playersprite/1x/Up1.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up2.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up3.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up4.png'), pygame.image.load(
-    './gameattempt/img/playersprite/1x/Up5.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up6.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up7.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up8.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Up9.png'), ]
-dwalkDown = [pygame.image.load('./gameattempt/img/playersprite/1x/Down1.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down2.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down3.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down4.png'), pygame.image.load(
-    './gameattempt/img/playersprite/1x/Down5.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down6.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down7.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down8.png'), pygame.image.load('./gameattempt/img/playersprite/1x/Down9.png'), ]
+dwalkRight = [pygame.image.load('./img/playersprite/1x/Right1.png'), pygame.image.load('./img/playersprite/1x/Right2.png'), pygame.image.load('./img/playersprite/1x/Right3.png'), pygame.image.load('./img/playersprite/1x/Right4.png'), pygame.image.load(
+    './img/playersprite/1x/Right5.png'), pygame.image.load('./img/playersprite/1x/Right6.png'), pygame.image.load('./img/playersprite/1x/Right7.png'), pygame.image.load('./img/playersprite/1x/Right8.png'), pygame.image.load('./img/playersprite/1x/Right9.png')]
+dwalkLeft = [pygame.image.load('./img/playersprite/1x/Left1.png'), pygame.image.load('./img/playersprite/1x/Left2.png'), pygame.image.load('./img/playersprite/1x/Left3.png'), pygame.image.load('./img/playersprite/1x/Left4.png'), pygame.image.load(
+    './img/playersprite/1x/Left5.png'), pygame.image.load('./img/playersprite/1x/Left6.png'), pygame.image.load('./img/playersprite/1x/Left7.png'), pygame.image.load('./img/playersprite/1x/Left8.png'), pygame.image.load('./img/playersprite/1x/Left9.png'), ]
+dwalkUp = [pygame.image.load('./img/playersprite/1x/Up1.png'), pygame.image.load('./img/playersprite/1x/Up2.png'), pygame.image.load('./img/playersprite/1x/Up3.png'), pygame.image.load('./img/playersprite/1x/Up4.png'), pygame.image.load(
+    './img/playersprite/1x/Up5.png'), pygame.image.load('./img/playersprite/1x/Up6.png'), pygame.image.load('./img/playersprite/1x/Up7.png'), pygame.image.load('./img/playersprite/1x/Up8.png'), pygame.image.load('./img/playersprite/1x/Up9.png'), ]
+dwalkDown = [pygame.image.load('./img/playersprite/1x/Down1.png'), pygame.image.load('./img/playersprite/1x/Down2.png'), pygame.image.load('./img/playersprite/1x/Down3.png'), pygame.image.load('./img/playersprite/1x/Down4.png'), pygame.image.load(
+    './img/playersprite/1x/Down5.png'), pygame.image.load('./img/playersprite/1x/Down6.png'), pygame.image.load('./img/playersprite/1x/Down7.png'), pygame.image.load('./img/playersprite/1x/Down8.png'), pygame.image.load('./img/playersprite/1x/Down9.png'), ]
 
 
 def scale_player(w, h):
@@ -348,34 +348,34 @@ def scale_player(w, h):
 
 
 # sister walk images
-siswalkRight = [pygame.image.load('./gameattempt/img/sistersprite/Right1.png'), pygame.image.load('./gameattempt/img/sistersprite/Right2.png'), pygame.image.load('./gameattempt/img/sistersprite/Right3.png'), pygame.image.load('./gameattempt/img/sistersprite/Right4.png'), pygame.image.load(
-    './gameattempt/img/sistersprite/Right5.png'), pygame.image.load('./gameattempt/img/sistersprite/Right6.png'), pygame.image.load('./gameattempt/img/sistersprite/Right7.png'), pygame.image.load('./gameattempt/img/sistersprite/Right8.png'), pygame.image.load('./gameattempt/img/sistersprite/Right9.png')]
-siswalkLeft = [pygame.image.load('./gameattempt/img/sistersprite/Left1.png'), pygame.image.load('./gameattempt/img/sistersprite/Left2.png'), pygame.image.load('./gameattempt/img/sistersprite/Left3.png'), pygame.image.load('./gameattempt/img/sistersprite/Left4.png'), pygame.image.load(
-    './gameattempt/img/sistersprite/Left5.png'), pygame.image.load('./gameattempt/img/sistersprite/Left6.png'), pygame.image.load('./gameattempt/img/sistersprite/Left7.png'), pygame.image.load('./gameattempt/img/sistersprite/Left8.png'), pygame.image.load('./gameattempt/img/sistersprite/Left9.png'), ]
-siswalkUp = [pygame.image.load('./gameattempt/img/sistersprite/Up1.png'), pygame.image.load('./gameattempt/img/sistersprite/Up2.png'), pygame.image.load('./gameattempt/img/sistersprite/Up3.png'), pygame.image.load('./gameattempt/img/sistersprite/Up4.png'), pygame.image.load(
-    './gameattempt/img/sistersprite/Up5.png'), pygame.image.load('./gameattempt/img/sistersprite/Up6.png'), pygame.image.load('./gameattempt/img/sistersprite/Up7.png'), pygame.image.load('./gameattempt/img/sistersprite/Up8.png'), pygame.image.load('./gameattempt/img/sistersprite/Up9.png'), ]
-siswalkDown = [pygame.image.load('./gameattempt/img/sistersprite/Down1.png'), pygame.image.load('./gameattempt/img/sistersprite/Down2.png'), pygame.image.load('./gameattempt/img/sistersprite/Down3.png'), pygame.image.load('./gameattempt/img/sistersprite/Down4.png'), pygame.image.load(
-    './gameattempt/img/sistersprite/Down5.png'), pygame.image.load('./gameattempt/img/sistersprite/Down6.png'), pygame.image.load('./gameattempt/img/sistersprite/Down7.png'), pygame.image.load('./gameattempt/img/sistersprite/Down8.png'), pygame.image.load('./gameattempt/img/sistersprite/Down9.png'), ]
+siswalkRight = [pygame.image.load('./img/sisterSprite/Right1.png'), pygame.image.load('./img/sisterSprite/Right2.png'), pygame.image.load('./img/sisterSprite/Right3.png'), pygame.image.load('./img/sisterSprite/Right4.png'), pygame.image.load(
+    './img/sisterSprite/Right5.png'), pygame.image.load('./img/sisterSprite/Right6.png'), pygame.image.load('./img/sisterSprite/Right7.png'), pygame.image.load('./img/sisterSprite/Right8.png'), pygame.image.load('./img/sisterSprite/Right9.png')]
+siswalkLeft = [pygame.image.load('./img/sisterSprite/Left1.png'), pygame.image.load('./img/sisterSprite/Left2.png'), pygame.image.load('./img/sisterSprite/Left3.png'), pygame.image.load('./img/sisterSprite/Left4.png'), pygame.image.load(
+    './img/sisterSprite/Left5.png'), pygame.image.load('./img/sisterSprite/Left6.png'), pygame.image.load('./img/sisterSprite/Left7.png'), pygame.image.load('./img/sisterSprite/Left8.png'), pygame.image.load('./img/sisterSprite/Left9.png'), ]
+siswalkUp = [pygame.image.load('./img/sisterSprite/Up1.png'), pygame.image.load('./img/sisterSprite/Up2.png'), pygame.image.load('./img/sisterSprite/Up3.png'), pygame.image.load('./img/sisterSprite/Up4.png'), pygame.image.load(
+    './img/sisterSprite/Up5.png'), pygame.image.load('./img/sisterSprite/Up6.png'), pygame.image.load('./img/sisterSprite/Up7.png'), pygame.image.load('./img/sisterSprite/Up8.png'), pygame.image.load('./img/sisterSprite/Up9.png'), ]
+siswalkDown = [pygame.image.load('./img/sisterSprite/Down1.png'), pygame.image.load('./img/sisterSprite/Down2.png'), pygame.image.load('./img/sisterSprite/Down3.png'), pygame.image.load('./img/sisterSprite/Down4.png'), pygame.image.load(
+    './img/sisterSprite/Down5.png'), pygame.image.load('./img/sisterSprite/Down6.png'), pygame.image.load('./img/sisterSprite/Down7.png'), pygame.image.load('./img/sisterSprite/Down8.png'), pygame.image.load('./img/sisterSprite/Down9.png'), ]
 
 
-dsiswalkRight = [pygame.image.load('./gameattempt/img/sistersprite/Right1.png'), pygame.image.load('./gameattempt/img/sistersprite/Right2.png'), pygame.image.load('./gameattempt/img/sistersprite/Right3.png'), pygame.image.load('./gameattempt/img/sistersprite/Right4.png'), pygame.image.load(
-    './gameattempt/img/sistersprite/Right5.png'), pygame.image.load('./gameattempt/img/sistersprite/Right6.png'), pygame.image.load('./gameattempt/img/sistersprite/Right7.png'), pygame.image.load('./gameattempt/img/sistersprite/Right8.png'), pygame.image.load('./gameattempt/img/sistersprite/Right9.png')]
-dsiswalkLeft = [pygame.image.load('./gameattempt/img/sistersprite/Left1.png'), pygame.image.load('./gameattempt/img/sistersprite/Left2.png'), pygame.image.load('./gameattempt/img/sistersprite/Left3.png'), pygame.image.load('./gameattempt/img/sistersprite/Left4.png'), pygame.image.load(
-    './gameattempt/img/sistersprite/Left5.png'), pygame.image.load('./gameattempt/img/sistersprite/Left6.png'), pygame.image.load('./gameattempt/img/sistersprite/Left7.png'), pygame.image.load('./gameattempt/img/sistersprite/Left8.png'), pygame.image.load('./gameattempt/img/sistersprite/Left9.png'), ]
-dsiswalkUp = [pygame.image.load('./gameattempt/img/sistersprite/Up1.png'), pygame.image.load('./gameattempt/img/sistersprite/Up2.png'), pygame.image.load('./gameattempt/img/sistersprite/Up3.png'), pygame.image.load('./gameattempt/img/sistersprite/Up4.png'), pygame.image.load(
-    './gameattempt/img/sistersprite/Up5.png'), pygame.image.load('./gameattempt/img/sistersprite/Up6.png'), pygame.image.load('./gameattempt/img/sistersprite/Up7.png'), pygame.image.load('./gameattempt/img/sistersprite/Up8.png'), pygame.image.load('./gameattempt/img/sistersprite/Up9.png'), ]
-dsiswalkDown = [pygame.image.load('./gameattempt/img/sistersprite/Down1.png'), pygame.image.load('./gameattempt/img/sistersprite/Down2.png'), pygame.image.load('./gameattempt/img/sistersprite/Down3.png'), pygame.image.load('./gameattempt/img/sistersprite/Down4.png'), pygame.image.load(
-    './gameattempt/img/sistersprite/Down5.png'), pygame.image.load('./gameattempt/img/sistersprite/Down6.png'), pygame.image.load('./gameattempt/img/sistersprite/Down7.png'), pygame.image.load('./gameattempt/img/sistersprite/Down8.png'), pygame.image.load('./gameattempt/img/sistersprite/Down9.png'), ]
+dsiswalkRight = [pygame.image.load('./img/sisterSprite/Right1.png'), pygame.image.load('./img/sisterSprite/Right2.png'), pygame.image.load('./img/sisterSprite/Right3.png'), pygame.image.load('./img/sisterSprite/Right4.png'), pygame.image.load(
+    './img/sisterSprite/Right5.png'), pygame.image.load('./img/sisterSprite/Right6.png'), pygame.image.load('./img/sisterSprite/Right7.png'), pygame.image.load('./img/sisterSprite/Right8.png'), pygame.image.load('./img/sisterSprite/Right9.png')]
+dsiswalkLeft = [pygame.image.load('./img/sisterSprite/Left1.png'), pygame.image.load('./img/sisterSprite/Left2.png'), pygame.image.load('./img/sisterSprite/Left3.png'), pygame.image.load('./img/sisterSprite/Left4.png'), pygame.image.load(
+    './img/sisterSprite/Left5.png'), pygame.image.load('./img/sisterSprite/Left6.png'), pygame.image.load('./img/sisterSprite/Left7.png'), pygame.image.load('./img/sisterSprite/Left8.png'), pygame.image.load('./img/sisterSprite/Left9.png'), ]
+dsiswalkUp = [pygame.image.load('./img/sisterSprite/Up1.png'), pygame.image.load('./img/sisterSprite/Up2.png'), pygame.image.load('./img/sisterSprite/Up3.png'), pygame.image.load('./img/sisterSprite/Up4.png'), pygame.image.load(
+    './img/sisterSprite/Up5.png'), pygame.image.load('./img/sisterSprite/Up6.png'), pygame.image.load('./img/sisterSprite/Up7.png'), pygame.image.load('./img/sisterSprite/Up8.png'), pygame.image.load('./img/sisterSprite/Up9.png'), ]
+dsiswalkDown = [pygame.image.load('./img/sisterSprite/Down1.png'), pygame.image.load('./img/sisterSprite/Down2.png'), pygame.image.load('./img/sisterSprite/Down3.png'), pygame.image.load('./img/sisterSprite/Down4.png'), pygame.image.load(
+    './img/sisterSprite/Down5.png'), pygame.image.load('./img/sisterSprite/Down6.png'), pygame.image.load('./img/sisterSprite/Down7.png'), pygame.image.load('./img/sisterSprite/Down8.png'), pygame.image.load('./img/sisterSprite/Down9.png'), ]
 
 
-dadwalkRight = [pygame.image.load('./gameattempt/img/dadsprite/Right1.png'), pygame.image.load('./gameattempt/img/dadsprite/Right2.png'), pygame.image.load('./gameattempt/img/dadsprite/Right3.png'), pygame.image.load('./gameattempt/img/dadsprite/Right4.png'), pygame.image.load(
-    './gameattempt/img/dadsprite/Right5.png'), pygame.image.load('./gameattempt/img/dadsprite/Right6.png'), pygame.image.load('./gameattempt/img/dadsprite/Right7.png'), pygame.image.load('./gameattempt/img/dadsprite/Right8.png'), pygame.image.load('./gameattempt/img/dadsprite/Right9.png')]
-dadwalkLeft = [pygame.image.load('./gameattempt/img/dadsprite/Left1.png'), pygame.image.load('./gameattempt/img/dadsprite/Left2.png'), pygame.image.load('./gameattempt/img/dadsprite/Left3.png'), pygame.image.load('./gameattempt/img/dadsprite/Left4.png'), pygame.image.load(
-    './gameattempt/img/dadsprite/Left5.png'), pygame.image.load('./gameattempt/img/dadsprite/Left6.png'), pygame.image.load('./gameattempt/img/dadsprite/Left7.png'), pygame.image.load('./gameattempt/img/dadsprite/Left8.png'), pygame.image.load('./gameattempt/img/dadsprite/Left9.png'), ]
-dadwalkUp = [pygame.image.load('./gameattempt/img/dadsprite/Up1.png'), pygame.image.load('./gameattempt/img/dadsprite/Up2.png'), pygame.image.load('./gameattempt/img/dadsprite/Up3.png'), pygame.image.load('./gameattempt/img/dadsprite/Up4.png'), pygame.image.load(
-    './gameattempt/img/dadsprite/Up5.png'), pygame.image.load('./gameattempt/img/dadsprite/Up6.png'), pygame.image.load('./gameattempt/img/dadsprite/Up7.png'), pygame.image.load('./gameattempt/img/dadsprite/Up8.png'), pygame.image.load('./gameattempt/img/dadsprite/Up9.png'), ]
-dadwalkDown = [pygame.image.load('./gameattempt/img/dadsprite/Down1.png'), pygame.image.load('./gameattempt/img/dadsprite/Down2.png'), pygame.image.load('./gameattempt/img/dadsprite/Down3.png'), pygame.image.load('./gameattempt/img/dadsprite/Down4.png'), pygame.image.load(
-    './gameattempt/img/dadsprite/Down5.png'), pygame.image.load('./gameattempt/img/dadsprite/Down6.png'), pygame.image.load('./gameattempt/img/dadsprite/Down7.png'), pygame.image.load('./gameattempt/img/dadsprite/Down8.png'), pygame.image.load('./gameattempt/img/dadsprite/Down9.png'), ]
+dadwalkRight = [pygame.image.load('./img/dadsprite/Right1.png'), pygame.image.load('./img/dadsprite/Right2.png'), pygame.image.load('./img/dadsprite/Right3.png'), pygame.image.load('./img/dadsprite/Right4.png'), pygame.image.load(
+    './img/dadsprite/Right5.png'), pygame.image.load('./img/dadsprite/Right6.png'), pygame.image.load('./img/dadsprite/Right7.png'), pygame.image.load('./img/dadsprite/Right8.png'), pygame.image.load('./img/dadsprite/Right9.png')]
+dadwalkLeft = [pygame.image.load('./img/dadsprite/Left1.png'), pygame.image.load('./img/dadsprite/Left2.png'), pygame.image.load('./img/dadsprite/Left3.png'), pygame.image.load('./img/dadsprite/Left4.png'), pygame.image.load(
+    './img/dadsprite/Left5.png'), pygame.image.load('./img/dadsprite/Left6.png'), pygame.image.load('./img/dadsprite/Left7.png'), pygame.image.load('./img/dadsprite/Left8.png'), pygame.image.load('./img/dadsprite/Left9.png'), ]
+dadwalkUp = [pygame.image.load('./img/dadsprite/Up1.png'), pygame.image.load('./img/dadsprite/Up2.png'), pygame.image.load('./img/dadsprite/Up3.png'), pygame.image.load('./img/dadsprite/Up4.png'), pygame.image.load(
+    './img/dadsprite/Up5.png'), pygame.image.load('./img/dadsprite/Up6.png'), pygame.image.load('./img/dadsprite/Up7.png'), pygame.image.load('./img/dadsprite/Up8.png'), pygame.image.load('./img/dadsprite/Up9.png'), ]
+dadwalkDown = [pygame.image.load('./img/dadsprite/Down1.png'), pygame.image.load('./img/dadsprite/Down2.png'), pygame.image.load('./img/dadsprite/Down3.png'), pygame.image.load('./img/dadsprite/Down4.png'), pygame.image.load(
+    './img/dadsprite/Down5.png'), pygame.image.load('./img/dadsprite/Down6.png'), pygame.image.load('./img/dadsprite/Down7.png'), pygame.image.load('./img/dadsprite/Down8.png'), pygame.image.load('./img/dadsprite/Down9.png'), ]
 
 
 def scale_sister(w, h):
@@ -985,7 +985,7 @@ class ItemBoard:
                     self.switchText()
 
 
-banner = pygame.image.load('./gameattempt/img/UIAssets/Banner.png')
+banner = pygame.image.load('./img/UIAssets/Banner.png')
 
 
 class Choice:
@@ -1018,7 +1018,7 @@ class Choice:
 
     def showChoice(self):
         if not self.musicchanged:
-            pygame.mixer.music.load('./gameattempt/music/intense.mp3')
+            pygame.mixer.music.load('./music/intense.mp3')
             pygame.mixer.music.set_volume(0.06)
             pygame.mixer.music.play(-1)
             self.musicchanged = True
@@ -1047,7 +1047,7 @@ class Choice:
 
 
 def img(fileName):
-    return pygame.image.load('./gameattempt/img'+fileName)
+    return pygame.image.load('./img'+fileName)
 
 
 retryBtn = img('/UIAssets/retryBtn.png')
@@ -1083,7 +1083,7 @@ class Ending:
 
     def showEnding(self):
         if not self.musicchanged:
-            pygame.mixer.music.load('./gameattempt/music/katamari.ogg')
+            pygame.mixer.music.load('./music/katamari.ogg')
             pygame.mixer.music.set_volume(0.12)
             pygame.mixer.music.play(-1)
             self.musicchanged = True
@@ -1604,26 +1604,26 @@ floattimer = 0
 setTimer = False
 
 # item boxes
-RingLarge = pygame.image.load('./gameattempt/img/objectAssets/RingLarge.png')
+RingLarge = pygame.image.load('./img/objectAssets/RingLarge.png')
 ringItembox = ItemBoard("Wedding Ring", RingLarge,
                         'This is a ring. You recognize it as your mother\'s wedding ring. Now what would it be doing next to a human sized pile of dirt?', True)
 ringItembox2 = ItemBoard("Wedding Ring", RingLarge,
                          'This is a ring. You recognize it as your mother\'s wedding ring. Now what would it be doing next to a human sized pile of dirt?', False)
 
-HeartInBox = pygame.image.load('./gameattempt/img/objectAssets/heartInBox.png')
+HeartInBox = pygame.image.load('./img/objectAssets/heartInBox.png')
 heartItemBox = ItemBoard("Human Heart In a Box (???)",
                          HeartInBox, 'Ok what? What... even... Whose... Are you gonna keep that???', True)
 heartItemBox2 = ItemBoard("Human Heart In a Box (???)",
                           HeartInBox, 'Ok what? What... even... Whose... Are you gonna keep that???', False)
 
 DirtMoundLg = pygame.image.load(
-    './gameattempt/img/objectAssets/DirtMoundLarge.png')
+    './img/objectAssets/DirtMoundLarge.png')
 dirtItemBox = ItemBoard("Dirt Mound", DirtMoundLg,
                         "Strangely human shaped. A surprise clue that will help us later.", False)
 dirtItemBox2 = ItemBoard("Dirt Mound", DirtMoundLg,
                          "Strangely human shaped. A surprise clue that will help us later.", False)
 
-PhotoLarge = pygame.image.load('./gameattempt/img/objectAssets/PhotoLarge.png')
+PhotoLarge = pygame.image.load('./img/objectAssets/PhotoLarge.png')
 PhotoLarge = pygame.transform.smoothscale(
     PhotoLarge, (148, 180))
 PhotoBox = ItemBoard("Photo of Johnathan", PhotoLarge,
@@ -1632,14 +1632,14 @@ PhotoBox2 = ItemBoard("Photo of Johnathan", PhotoLarge,
                       "One of your parents had this for some reason. ZA WARUDO!!!", False)
 
 MarPicLarge = pygame.image.load(
-    './gameattempt/img/objectAssets/marPicLarge.png')
+    './img/objectAssets/marPicLarge.png')
 MarBox = ItemBoard("Torn Marriage Photo", MarPicLarge,
                    "A torn wedding picture of your dad and... mom. So she does exist, and you're not crazy.", True)
 MarBox2 = ItemBoard("Torn Marriage Photo", MarPicLarge,
                     "A torn wedding picture of your dad and... mom. So she does exist, and you're not crazy.", False)
 
 food = pygame.image.load(
-    './gameattempt/img/objectAssets/food.png')
+    './img/objectAssets/food.png')
 foodBox = ItemBoard("Food (Hair Included)", food,
                     "A tasty breakfast. Your bacon has blonde hair on it. Still bussin tho.", True)
 foodBox2 = ItemBoard("Food (Hair Included)", food,
@@ -1675,7 +1675,7 @@ currentEnding = None
 currentChoice = None
 
 # music
-pygame.mixer.music.load('./gameattempt/music/reprise.ogg')
+pygame.mixer.music.load('./music/reprise.ogg')
 pygame.mixer.music.set_volume(0.06)
 pygame.mixer.music.play(-1)
 
